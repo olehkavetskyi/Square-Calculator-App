@@ -1,0 +1,52 @@
+<div class="container">
+  <h1 class="container__title">Calculator</h1>
+  <div class="container__description">
+      This is a form in which you should type the points of the square (ABCD)
+      and the point O that does not belong to the square but can be the center
+      of it. If and only if it's true, the calculator will return: true
+  </div>
+  <div class="info__container">
+      <h2>{{info}}</h2>
+  </div>
+  <div class="canvas__container">
+      <canvas style="display:none" #myCanvas width="400" height="400"></canvas>
+  </div>
+  <form class="form" (ngSubmit)="calculate()" #calculatorForm="ngForm" novalidate>
+      <div class="form__elem">
+          <label class="form__label">A:</label>
+          <label class="form__label"> X:</label>
+          <input id="coordinateAX" class="form__input" type="number" required [(ngModel)]="points.AX" name="coordinateAX" #coordinateAXInput="ngModel" />
+          <label class="form__label">Y:</label>
+          <input id="coordinateAY" class="form__input" type="number" required [(ngModel)]="points.AY" name="coordinateAY" #coordinateAYInput="ngModel" />
+      </div>
+      <div class="form__elem">
+          <label class="form__label">B:</label>
+          <label class="form__label"> X:</label>
+          <input id="coordinateBX" class="form__input" type="number" required [(ngModel)]="points.BX" name="coordinateBX" #coordinateBXInput="ngModel" />
+          <label class="form__label">Y:</label>
+          <input id="coordinateBY" class="form__input" type="number" required [(ngModel)]="points.BY" name="coordinateBY" #coordinateBYInput="ngModel" />
+      </div>
+      <div class="form__elem">
+          <label class="form__label">C:</label>
+          <label class="form__label"> X:</label>
+          <input id="coordinateCX" class="form__input" type="number" required [(ngModel)]="points.CX" name="coordinateCX" #coordinateCXInput="ngModel" />
+          <label class="form__label">Y:</label>
+          <input id="coordinateCY" class="form__input" type="number" required [(ngModel)]="points.CY" name="coordinateCY" #coordinateCYInput="ngModel" />
+      </div>
+      <div class="form__elem">
+          <label class="form__label">D:</label>
+          <label class="form__label"> X:</label>
+          <input id="coordinateDX" class="form__input" type="number" required [(ngModel)]="points.DX" name="coordinateDX" #coordinateDXInput="ngModel" />
+          <label class="form__label">Y:</label>
+          <input id="coordinateDY" class="form__input" type="number" required [(ngModel)]="points.DY" name="coordinateDY" #coordinateDYInput="ngModel" />
+      </div>
+      <div class="form__elem">
+          <label class="form__label">O:</label>
+          <label class="form__label">X:</label>
+          <input id="coordinateOX" class="form__input" type="number" [(ngModel)]="points.OX" name="coordinateOX" #coordinateOXInput="ngModel" />
+          <label class="form__label">Y:</label>
+          <input id="coordinateOY" class="form__input" type="number" required [(ngModel)]="points.OY" name="coordinateOY" #coordinateOYInput="ngModel" />
+      </div>
+      <button class="form__button" type="submit" [disabled]="!calculatorForm.form.valid">Calculate</button>
+  </form>
+</div>
